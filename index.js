@@ -32,7 +32,7 @@ const downloadImages = async (query, count) => {
     const images = await getImages(query, count)
 
     for (const image of images) {
-      const imageUrl = image.urls.full
+      const imageUrl = image.urls.regular
       const imageName = `${image.id}.jpg`
       const imagePath = path.resolve(__dirname, 'images', imageName)
 
@@ -46,7 +46,7 @@ const downloadImages = async (query, count) => {
   }
 }
 
-const query = 'people' // Change to your preferred query
+const query = 'street-photography' // Change to your preferred query
 const count = 30 // Number of images to download
 
 // Create the images directory if it doesn't exist
